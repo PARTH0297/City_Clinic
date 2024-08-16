@@ -1,8 +1,11 @@
 package com.app.service;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import com.app.dto.AppointmentDTO;
+import com.app.dto.BookedAppointmentDTO;
+import com.app.dto.DetailedAppointmentDTO;
 
 public interface AppointmentService {
 	
@@ -15,4 +18,12 @@ public interface AppointmentService {
 	List<com.app.dto.AppointmentDTO> getAllAppointments();
 
 	void deleteAppointment(Long appointmentId);
+	
+	 public List<DetailedAppointmentDTO> getAppointmentsByDoctorId(Long doctorId);
+	 
+	 List<BookedAppointmentDTO> getBookedAppointmentsByPatientId(Long patientId);
+	 
+	 public List<DetailedAppointmentDTO> getAppointmentsByDoctorIdAndDate(Long doctorId, LocalDate date);
+	 
+	 public List<DetailedAppointmentDTO> getAppointmentsByDoctorIdAndDateRange(Long doctorId, LocalDate startDate, LocalDate endDate);
 }
