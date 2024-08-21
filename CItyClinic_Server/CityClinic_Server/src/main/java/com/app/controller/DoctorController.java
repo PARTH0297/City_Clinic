@@ -25,7 +25,7 @@ public class DoctorController {
     @Autowired
     private DoctorService doctorService;
 
-//    @PreAuthorize("hasRole('DOCTOR')")
+
     @PostMapping("/register")
     public void registerDoctor(@RequestBody DoctorRegistrationRequest request) {
     	System.out.println(request);
