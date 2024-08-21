@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-
+import { toast, Toaster } from 'react-hot-toast';
 const Appointments = () => {
     const [appointments, setAppointments] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -22,6 +22,7 @@ const Appointments = () => {
                     setAppointments(response.data);
                 } catch (error) {
                     console.error("Error fetching appointments:", error);
+                    toast.error('Error fetching appointments.');
                 } finally {
                     setLoading(false); // Set loading to false after fetching
                 }
@@ -57,8 +58,10 @@ const Appointments = () => {
                         : app
                 )
             );
+            toast.success('Appointment status updated successfully.');
         } catch (error) {
             console.error("Error updating appointment status:", error);
+            toast.error('Error updating appointment status.');
         }
     };
 
@@ -126,6 +129,7 @@ const Appointments = () => {
                     </tbody>
                 </table>
             </div>
+            <Toaster position='bottom-center'/>
         </div>
     );
 };
