@@ -25,7 +25,7 @@ const MedicalHistory = () => {
     const fetchMedicalHistory = async () => {
       try {
         console.log("Patient ID:", patientId);
-        const response = await axios.get(`https://localhost:8080/api/medical-history/${patientId}`);
+        const response = await axios.get(`/api/medical-history/${patientId}`);
         setMedicalHistory(response.data);
         setExists(true);
       } catch (error) {
@@ -66,11 +66,11 @@ const MedicalHistory = () => {
     try {
       if (exists) {
         // Update existing medical history
-        await axios.put(`https://localhost:8080/api/medical-history/${patientId}`, requestData);
+        await axios.put(`/api/medical-history/${patientId}`, requestData);
         toast.success('Medical history updated successfully');
       } else {
         // Create new medical history
-        await axios.post('https://localhost:8080/api/medical-history', requestData);
+        await axios.post('/api/medical-history', requestData);
         toast.success('Medical history created successfully');
       }
      // navigate('/dashboard'); 

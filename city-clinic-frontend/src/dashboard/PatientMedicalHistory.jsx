@@ -17,7 +17,7 @@ const PatientMedicalHistory = () => {
 
     const fetchMedicalHistory = async () => {
       try {
-        const response = await axios.get(`https://localhost:8080/api/medical-history/patient/${user.user.id}`);
+        const response = await axios.get(`/api/medical-history/patient/${user.user.id}`);
         setMedicalHistory(response.data);
       } catch (err) {
         setError('Error fetching medical history.');

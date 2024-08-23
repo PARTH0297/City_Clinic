@@ -32,7 +32,8 @@ import com.app.dto.PatientInfo;
 import com.app.service.AppointmentService;
 
 
-@CrossOrigin(origins ="http://localhost:5173")
+//@CrossOrigin(origins ="http://localhost:5173")
+@CrossOrigin(origins = {"http://localhost:5173", "https://cityclinic.vercel.app"})
 @RestController
 @RequestMapping("/api/appointment")
 public class AppointmentController {

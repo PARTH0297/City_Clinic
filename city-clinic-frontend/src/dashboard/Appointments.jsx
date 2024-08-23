@@ -11,11 +11,11 @@ const Appointments = () => {
         const fetchAppointments = async () => {
             if (user) {
                 setLoading(true); // Set loading to true when fetching
-                let url = `https://localhost:8080/api/appointment/doctor/${user.user.id}`;
+                let url = `/api/appointment/doctor/${user.user.id}`;
                 if (filter === 'today') {
-                    url = `https://localhost:8080/api/appointment/doctor/${user.user.id}/today`;
+                    url = `/api/appointment/doctor/${user.user.id}/today`;
                 } else if (filter === 'week') {
-                    url = `https://localhost:8080/api/appointment/doctor/${user.user.id}/week`;
+                    url = `/api/appointment/doctor/${user.user.id}/week`;
                 }
                 try {
                     const response = await axios.get(url);
@@ -45,7 +45,7 @@ const Appointments = () => {
     const handleUpdateStatus = async (appointmentId) => {
         const appointment = appointments.find(app => app.appointmentId === appointmentId);
         try {
-            await axios.put(`https://localhost:8080/api/appointment/${appointmentId}`, {
+            await axios.put(`/api/appointment/${appointmentId}`, {
                 patientId: appointment.patientId, 
                 doctorId: appointment.doctorId,
                 appointmentDate: appointment.appointmentDate,

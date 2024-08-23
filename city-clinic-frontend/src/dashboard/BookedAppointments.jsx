@@ -7,7 +7,7 @@ const BookedAppointments = () => {
     useEffect(() => {
         
         const patientId = user.user.id;
-        axios.get(`https://localhost:8080/api/appointment/booked/${patientId}`)
+        axios.get(`/api/appointment/booked/${patientId}`)
             .then(response => {
                 setAppointments(response.data);
             })

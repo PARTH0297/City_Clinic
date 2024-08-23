@@ -19,7 +19,8 @@ import com.app.service.MedicalHistoryService;
 
 @RestController
 @RequestMapping("/api/medical-history")
-@CrossOrigin(origins ="http://localhost:5173")
+//@CrossOrigin(origins ="http://localhost:5173")
+@CrossOrigin(origins = {"http://localhost:5173", "https://cityclinic.vercel.app"})
 public class MedicalHistoryController {
 
     @Autowired

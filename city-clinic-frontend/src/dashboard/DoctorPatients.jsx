@@ -18,7 +18,7 @@ const DoctorPatients = () => {
 
     const fetchPatients = async () => {
       try {
-        const response = await axios.get(`https://localhost:8080/api/appointment/doctor/${user.user.id}/patients`);
+        const response = await axios.get(`/api/appointment/doctor/${user.user.id}/patients`);
         setPatients(response.data);
       } catch (error) {
         console.error("Error fetching patients", error);
@@ -35,7 +35,7 @@ const DoctorPatients = () => {
   const handleSearch = async () => {
     if (!searchId) return;
     try {
-      const response = await axios.get(`https://localhost:8080/api/appointment/search?appointmentId=${searchId}&doctorId=${user.user.id}`);
+      const response = await axios.get(`/api/appointment/search?appointmentId=${searchId}&doctorId=${user.user.id}`);
       if (response.data) {
         setAppointmentDetails(response.data);
         console.log("Appointment details:", response.data);

@@ -17,7 +17,8 @@ import com.app.dto.DoctorRegistrationRequest;
 import com.app.entity.Doctor;
 import com.app.service.DoctorService;
 
-@CrossOrigin(origins ="http://localhost:5173")
+//@CrossOrigin(origins ="http://localhost:5173")
+@CrossOrigin(origins = {"http://localhost:5173", "https://cityclinic.vercel.app"})
 @RestController
 @RequestMapping("/api/doctors")
 public class DoctorController {
